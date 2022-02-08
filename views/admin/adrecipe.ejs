@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <table>
+                        <table class="table table-bordered cart_summary">
+                            <thead>
+                                <tr>
+                                    <th class="name">Name</th>
+                                    <th>description</th>
+                                    <th>email</th>
+                                    <th>ingredients</th>
+                                    <th>category</th>
+                                    <th>image</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(typeof recipe !== 'undefined' && recipe.length > 0) { %>
+                                    <% recipe.forEach(function(recipe, index) { %>
+                                    
+                                <tr>
+                                    <td class="name">
+                                       
+                                            <div class="pt-1"><%- recipe.name%></div>
+                                    </td>
+                                    <td class="description">
+                                        
+                                            <div class="pt-1"><%- recipe.description%></div>
+                                    </td>
+                                    <td class="email">
+                                        
+                                            <div class="pt-1"><%- recipe.email%></div>
+                                    </td>
+                                    <td class="ingredients">
+                                        
+                                            <div class="pt-1"><%- recipe.ingredients%></div>
+                                    </td>
+                                    <td class="category">
+                                        
+                                            <div class="pt-1"><%- recipe.category%></div>
+                                    </td>
+                                    <td class="qty">
+                                        <img width="100px" src="/uploads/<%- recipe.image%>" alt="<%- recipe.name%>" loading="lazy">
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                    <% } %>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>	
+                        
+                    </div>
+                    </table>
+                </div>
+            </div>
+        </nav>
+    
+</body>
+</html>
